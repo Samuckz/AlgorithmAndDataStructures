@@ -2,10 +2,25 @@ package ListasEncadeadas.teste;
 
 import ListasEncadeadas.ListaEncadeada;
 
+import java.util.LinkedList;
+
 public class ListaEncadeadaTeste {
     public static void main(String[] args) {
-        test_adicionaNoInicio();
-        test_adicionaPorPosicao();
+//        test_adicionaNoInicio();
+//        test_adicionaPorPosicao();
+//        test_removerPrimeiroEUltimoElemento();
+//        test_removeElementoPorPosicao();
+        testeLinkedList();
+    }
+
+    public static ListaEncadeada<Integer> cenario(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        lista.adiciona(1);
+        lista.adiciona( 2);
+        lista.adiciona( 3);
+        lista.adiciona( 4);// 1,2,3,4
+
+        return lista;
     }
 
     public static void test_adicionaNoInicio(){
@@ -27,6 +42,55 @@ public class ListaEncadeadaTeste {
 
         System.out.println(lista);
     }
+
+    public static void test_removerPrimeiroEUltimoElemento(){
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        lista.adiciona(1);
+        lista.adiciona( 2);
+        lista.adiciona( 3);
+        lista.adiciona( 4);// 1,2,3,4
+
+        System.out.println("Lista inicial:");
+        System.out.println(lista);
+
+        lista.deletarPrimeiroElemento();
+
+        System.out.println("\nRemovido Primeiro elemento:");
+        System.out.println(lista + "[" + lista.getTamanho() + "]");
+
+        lista.deletarUltimoElemento();
+
+        System.out.println("\nRemovido Último elemento:");
+        System.out.println(lista + "[" + lista.getTamanho() + "]");
+
+        lista.deletarUltimoElemento();
+
+        System.out.println("\nRemovido Último elemento:");
+        System.out.println(lista + "[" + lista.getTamanho() + "]");
+
+        lista.deletarUltimoElemento();
+
+        System.out.println("\nRemovido Último elemento:");
+        System.out.println(lista + "[" + lista.getTamanho() + "]");
+    }
+
+    public static void test_removeElementoPorPosicao(){
+        ListaEncadeada<Integer> lista = cenario();
+
+        System.out.println("Lista original");
+        System.out.println(lista);
+
+        lista.deletarElementoPosicaoQualquer(2);
+
+        System.out.println("Lista alterada");
+        System.out.println(lista);
+
+        lista.deletarElementoPosicaoQualquer(2);
+
+        System.out.println("Lista alterada");
+        System.out.println(lista);
+    }
+
 
     public static void testesIniciais(){
         ListaEncadeada lista = new ListaEncadeada<Integer>();
@@ -60,6 +124,16 @@ public class ListaEncadeadaTeste {
 
 
         lista.clearList();
+        System.out.println(lista);
+    }
+
+    public static void testeLinkedList(){
+        LinkedList<Integer> lista = new LinkedList<>();
+        lista.add(1);
+        lista.addFirst(0);
+        lista.addLast(3);
+        lista.add(2,2);
+
         System.out.println(lista);
     }
 }

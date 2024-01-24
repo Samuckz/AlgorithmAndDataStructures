@@ -125,7 +125,86 @@ public class ListaEncadeada<T>{
             Celula<T> novaCelula = new Celula<>(elemento, proximoNo);
             noAnterior.setProximo(novaCelula);
             this.tamanho++;
-
         }
     }
+
+    public void adicionaPosicaoEspecifica(T elemento, int posicao){
+        if(posicao == 0)
+            adicionaNoInicio(elemento);
+
+        else if (this.tamanho == posicao) {
+            adiciona(elemento);
+        }
+
+        else if(posicao < 0 || posicao > this.tamanho){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        else{
+            Celula<T> antigaCelula = this.buscaNo(posicao);
+            Celula<T> proxinoCelula = antigaCelula.getProximo();
+            Celula<T> novaCelula = new Celula<>(elemento, proxinoCelula);
+            antigaCelula.setProximo(novaCelula);
+            this.tamanho++;
+        }
+    }
+
+    public void anularElemento(Celula elemento){
+        elemento.setElemento(null);
+        elemento.setProximo(null);
+    }
+
+    public void deletarPrimeiroElemento(){
+        if(this.tamanho == 0){
+            throw new RuntimeException("A lista está vazia");
+        }
+
+        this.inicio = this.inicio.getProximo();
+        this.tamanho--;
+
+        if(this.tamanho == 0){
+            this.ultimo = null;
+        }
+
+    }
+
+    public void deletarUltimoElemento(){
+        if (this.tamanho==0)
+            throw new RuntimeException("A lista está vazia");
+
+        if(this.tamanho == 1){
+            this.deletarPrimeiroElemento();
+            return;
+        }
+
+
+        Celula<T> penultimoElemento = this.buscaNo(this.tamanho - 2);
+        penultimoElemento.setProximo(null);
+        this.ultimo = penultimoElemento;
+        this.tamanho--;
+    }
+
+    public void deletarElementoPosicaoQualquer(int posicao){
+
+        if(posicao < 0 || posicao >= this.tamanho)
+            throw new IllegalArgumentException("Posição não existe");
+
+        if(posicao == 0){
+            this.deletarPrimeiroElemento();
+            return;
+        }
+
+        if(posicao == this.tamanho - 1){
+            this.deletarUltimoElemento();
+            return;
+        }
+
+        Celula<T> celulaRemovida = buscaNo(posicao);
+        Celula<T> celulaAntecessora = buscaNo(posicao-1);
+
+        celulaAntecessora.setProximo(celulaRemovida.getProximo());
+        this.anularElemento(celulaRemovida);
+        this.tamanho--;
+    }
+
 }
