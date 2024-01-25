@@ -1,17 +1,15 @@
 package EstruturaDeDados.Vetores;
 
-import java.util.Arrays;
-
-public class Vetor {
-    private String[] elementos;
+public class VetorObjetos {
+    private Object[] elementos;
     private int ultimaPosicao;
 
     private final int NAO_ENCONTRADO  = -1;
 
 
     // === CONSTRUCTORS ===
-    public Vetor(int capacidade) {
-        this.elementos = new String[capacidade];
+    public VetorObjetos(int capacidade) {
+        this.elementos = new Object[capacidade];
         this.ultimaPosicao = 0;
     }
 
@@ -24,7 +22,7 @@ public class Vetor {
         return this.elementos.length;
     }
 
-    public void adicionaNoFinal(String elemento) throws RuntimeException{
+    public void adicionaNoFinal(Object elemento) throws RuntimeException{
 
         this.aumentarCapacidadeVetor();
 
@@ -36,10 +34,10 @@ public class Vetor {
         ultimaPosicao++;
     }
     /*
-    * Este método, caso o vetor apresente um tamanho muito grande, pode não se tornar muito efetivo, já que teríamos
-    * de percorrer o vetor inteiro de vez por vez. Nesse caso,seria interessante criar uma variável par armazenar a última posição do
-    * vetor utilizada
-    * */
+     * Este método, caso o vetor apresente um tamanho muito grande, pode não se tornar muito efetivo, já que teríamos
+     * de percorrer o vetor inteiro de vez por vez. Nesse caso,seria interessante criar uma variável par armazenar a última posição do
+     * vetor utilizada
+     * */
 
     public String toString(){
         StringBuilder response = new StringBuilder();
@@ -61,7 +59,7 @@ public class Vetor {
         }
     }
 
-    public String obterElementoPorPosicao(int posicao){
+    public Object obterElementoPorPosicao(int posicao){
         this.validarPosicao(posicao);
         return this.elementos[posicao];
 
@@ -73,7 +71,7 @@ public class Vetor {
             throw new IllegalArgumentException("Posição inválida");
     }
 
-    public int verificaSeElementoExisteNoVetor(String elemento){
+    public int verificaSeElementoExisteNoVetor(Object elemento){
         for(int i = 0; i < this.ultimaPosicao; i++){
             if(this.elementos[i].equals(elemento))
                 return i;
@@ -83,11 +81,11 @@ public class Vetor {
 
     }
 
-    public void adicionarElementoEmQualquerPosicao(String elemento, int posicao){
+    public void adicionarElementoEmQualquerPosicao(Object elemento, int posicao){
         this.validarPosicao(posicao);
         this.aumentarCapacidadeVetor();
 
-        String atual = this.elementos[posicao];
+        Object atual = this.elementos[posicao];
         this.elementos[posicao] = elemento;
         posicao++;
 
@@ -96,7 +94,7 @@ public class Vetor {
         }
 
         while(posicao <= this.ultimaPosicao){
-            String proximo = this.elementos[posicao];
+            Object proximo = this.elementos[posicao];
             this.elementos[posicao] = atual;
             atual = proximo;
             posicao++;
@@ -107,7 +105,7 @@ public class Vetor {
 
     private void aumentarCapacidadeVetor(){
         if(this.ultimaPosicao == this.elementos.length){
-            String[] elementosNovos = new String[this.elementos.length*2];
+            Object[] elementosNovos = new String[this.elementos.length*2];
             for(int i=0; i<this.elementos.length; i++){
                 elementosNovos[i] = this.elementos[i];
             }
@@ -119,13 +117,11 @@ public class Vetor {
     public void removerElementoEmQualquerPosicao(int posicao){
         this.validarPosicao(posicao);
         while(posicao < this.ultimaPosicao){
-            String proximo = this.elementos[posicao+1];
+            Object proximo = this.elementos[posicao+1];
             this.elementos[posicao] = proximo;
             posicao++;
         }
 
         this.ultimaPosicao--;
     }
-
-    //
 }
