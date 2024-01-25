@@ -1,4 +1,4 @@
-package ListasEncadeadas;
+package EstruturaDeDados.ListasEncadeadas;
 
 public class ListaEncadeada<T>{
     private Celula<T> inicio;
@@ -184,23 +184,23 @@ public class ListaEncadeada<T>{
         this.tamanho--;
     }
 
-    public void deletarElementoPosicaoQualquer(int posicao){
+    public void deletarElementoPosicaoQualquer(int posicao) {
 
-        if(posicao < 0 || posicao >= this.tamanho)
+        if (posicao < 0 || posicao >= this.tamanho)
             throw new IllegalArgumentException("Posição não existe");
 
-        if(posicao == 0){
+        if (posicao == 0) {
             this.deletarPrimeiroElemento();
             return;
         }
 
-        if(posicao == this.tamanho - 1){
+        if (posicao == this.tamanho - 1) {
             this.deletarUltimoElemento();
             return;
         }
 
         Celula<T> celulaRemovida = buscaNo(posicao);
-        Celula<T> celulaAntecessora = buscaNo(posicao-1);
+        Celula<T> celulaAntecessora = buscaNo(posicao - 1);
 
         celulaAntecessora.setProximo(celulaRemovida.getProximo());
         this.anularElemento(celulaRemovida);

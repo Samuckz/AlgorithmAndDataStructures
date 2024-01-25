@@ -1,6 +1,7 @@
-package ListasEncadeadas.teste;
+package EstruturaDeDados.ListasEncadeadas.teste;
 
-import ListasEncadeadas.ListaEncadeada;
+import EstruturaDeDados.ListasEncadeadas.ListaEncadeada;
+import EstruturaDeDados.Vetores.Vetor;
 
 import java.util.LinkedList;
 
@@ -136,4 +137,5 @@ public class ListaEncadeadaTeste {
 
         System.out.println(lista);
     }
+
 }
