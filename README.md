@@ -12,7 +12,7 @@ Juntamente com essas referências, estou explorando uma variedade de recursos on
 
 # Sumário
 ### Estruturas de Dados
-### - Queues
+### - Listas Não Ordenadas
 <input type="radio" checked>Introdução</input><br>
 <input type="radio" checked>Tamanho da lista</input><br>
 <input type="radio" checked>Inserir no final</input><br>
@@ -26,20 +26,26 @@ Juntamente com essas referências, estou explorando uma variedade de recursos on
 <input type="radio" checked>Remover elemento do início da lista</input><br>
 <input type="radio" checked>API LinkedList em Java</input><br>
 
+### - Listas ordenadas
+<input type="radio" checked>Adicionar Elemento</input><br>
+<input type="radio" checked>Remover elemento</input><br>
+<input type="radio" checked>Imprimir Lista</input><br>
+<input type="radio" checked>Limpar lista</input><br>
 
-### - Vectors
+
+### - Arranjos
 <input type="radio" checked>Definição</input><br>
 <input type="radio" checked>Adicionar um elemento no final do vetor</input><br>
-<input type="radio" unchecked>Quantos elementos existem em um vetor</input><br>
-<input type="radio" unchecked>Imprimir os elementos no vetor</input><br>
-<input type="radio" unchecked>Obter um elemento pela sua posição</input><br>
-<input type="radio" unchecked>Verificar se um elemento existe no vetor</input><br>
-<input type="radio" unchecked>Adicionar um elemento em qualquer posição</input><br>
-<input type="radio" unchecked>Aumentar a capacidade do vetor</input><br>
-<input type="radio" unchecked>Remover um elemento do vetor</input><br>
-<input type="radio" unchecked>Generalizar os tipos de elementos</input><br>
-<input type="radio" unchecked>Definir o tipo do vetor dinamicamente</input><br>
-<input type="radio" unchecked>API Java ArrayList</input><br>
+<input type="radio" checked>Quantos elementos existem em um vetor</input><br>
+<input type="radio" checked>Imprimir os elementos no vetor</input><br>
+<input type="radio" checked>Obter um elemento pela sua posição</input><br>
+<input type="radio" checked>Verificar se um elemento existe no vetor</input><br>
+<input type="radio" checked>Adicionar um elemento em qualquer posição</input><br>
+<input type="radio" checked>Aumentar a capacidade do vetor</input><br>
+<input type="radio" checked>Remover um elemento do vetor</input><br>
+<input type="radio" checked>Generalizar os tipos de elementos</input><br>
+<input type="radio" checked>Definir o tipo do vetor dinamicamente</input><br>
+<input type="radio" checked>API Java ArrayList</input><br>
 
 ---
 
