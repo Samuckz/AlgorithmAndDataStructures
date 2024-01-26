@@ -1,21 +1,18 @@
-package EstruturaDeDados.ListasEncadeadas.teste;
-
-import EstruturaDeDados.ListasEncadeadas.ListaEncadeada;
-import EstruturaDeDados.Vetores.Vetor;
+package EstruturaDeDados.ListasEncadeadas.naoOrdenada;
 
 import java.util.LinkedList;
 
 public class ListaEncadeadaTeste {
     public static void main(String[] args) {
 //        test_adicionaNoInicio();
-//        test_adicionaPorPosicao();
+        test_adicionaPorPosicao();
 //        test_removerPrimeiroEUltimoElemento();
 //        test_removeElementoPorPosicao();
-        testeLinkedList();
+//        testeLinkedList();
     }
 
-    public static ListaEncadeada<Integer> cenario(){
-        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+    public static ListaEncadeadaNaoOrdenada<Integer> cenario(){
+        ListaEncadeadaNaoOrdenada<Integer> lista = new ListaEncadeadaNaoOrdenada<>();
         lista.adiciona(1);
         lista.adiciona( 2);
         lista.adiciona( 3);
@@ -25,7 +22,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void test_adicionaNoInicio(){
-        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        ListaEncadeadaNaoOrdenada<Integer> lista = new ListaEncadeadaNaoOrdenada<>();
         lista.adicionaNoInicio(3);
         lista.adicionaNoInicio(2);
         lista.adicionaNoInicio(1); //1, 2, 3
@@ -33,7 +30,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void test_adicionaPorPosicao(){
-        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        ListaEncadeadaNaoOrdenada<Integer> lista = new ListaEncadeadaNaoOrdenada<>();
         lista.adiciona(1);
         lista.adiciona( 2);
         lista.adiciona( 4);// 1,2,4
@@ -45,7 +42,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void test_removerPrimeiroEUltimoElemento(){
-        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+        ListaEncadeadaNaoOrdenada<Integer> lista = new ListaEncadeadaNaoOrdenada<>();
         lista.adiciona(1);
         lista.adiciona( 2);
         lista.adiciona( 3);
@@ -76,7 +73,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void test_removeElementoPorPosicao(){
-        ListaEncadeada<Integer> lista = cenario();
+        ListaEncadeadaNaoOrdenada<Integer> lista = cenario();
 
         System.out.println("Lista original");
         System.out.println(lista);
@@ -94,7 +91,7 @@ public class ListaEncadeadaTeste {
 
 
     public static void testesIniciais(){
-        ListaEncadeada lista = new ListaEncadeada<Integer>();
+        ListaEncadeadaNaoOrdenada lista = new ListaEncadeadaNaoOrdenada<Integer>();
 
         lista.adiciona(1);
 

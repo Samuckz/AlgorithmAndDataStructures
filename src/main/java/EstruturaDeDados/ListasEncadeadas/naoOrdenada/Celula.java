@@ -1,4 +1,4 @@
-package EstruturaDeDados.ListasEncadeadas;
+package EstruturaDeDados.ListasEncadeadas.naoOrdenada;
 
 public class Celula<T> {
     private T elemento;

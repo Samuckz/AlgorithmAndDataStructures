@@ -1,6 +1,6 @@
-package EstruturaDeDados.ListasEncadeadas;
+package EstruturaDeDados.ListasEncadeadas.naoOrdenada;
 
-public class ListaEncadeada<T>{
+public class ListaEncadeadaNaoOrdenada<T>{
     private Celula<T> inicio;
     private Celula<T> ultimo;
     private int tamanho;
@@ -32,6 +32,7 @@ public class ListaEncadeada<T>{
         }
 
         Celula<T> atual = this.inicio;
+        System.out.println(atual);
 
         for(int i = 0; i < this.tamanho-1; i++){
             builder.append(atual.getElemento()).append(",");
