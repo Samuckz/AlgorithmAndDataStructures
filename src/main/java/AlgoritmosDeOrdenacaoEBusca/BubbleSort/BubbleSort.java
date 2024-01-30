@@ -64,4 +64,14 @@ public class BubbleSort {
         builder.append(sequencia[(sequencia.length)-1]).append("]");
         return builder.toString();
     }
+
+    public int[] sequenciaAleatorio(int tamanho){
+        int sequencia[] = new int[tamanho];
+        Random random = new Random();
+        for(int i = 0; i < sequencia.length; i++){
+            sequencia[i] = random.nextInt(10);
+        }
+
+        return sequencia;
+    }
 }
